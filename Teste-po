@@ -1,0 +1,7 @@
+server:
+  port: 8090
+info:
+  author: Octavio Augusto Martins Mendes
+  dog: Parceiro
+  cidade: PO lugar do Mundo
+country: Brazil

@@ -11,8 +11,8 @@ management:
       exposure:
         include: health,info 
 info:
-  author: Tulio L. Viglione
-  mail: tulio.l.viglione@gmail.com
+  author: Octavio Augusto Martins Mendes
+  mail: octavio.vscode@gmail.com
 server:
   port: ${PORT:9999}
 message: Generic

@@ -1,3 +1,6 @@
 server:
   port: 8086
+info:
+  author: Octavio Augusto Martins Mendes
+  dog: Parceiro
 country: Brazil

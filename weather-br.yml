@@ -1,4 +1,8 @@
 servidor:
-  port: 8091
+  port: 8989
+informações :
+  autor : Octavio Augusto Martins Mendes
+  cão : Parceiro
+  classe : weather
 mensages : Weather Microcervissos     
 

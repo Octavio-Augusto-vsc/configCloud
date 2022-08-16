@@ -1,8 +1,9 @@
-servidor:
-  port: 8989
-informações :
-  autor : Octavio Augusto Martins Mendes
-  cão : Parceiro
-  classe : weather
-mensages : Weather Microcervissos     
-
+server:
+  port: 8187
+info:
+  author: Octavio Augusto Martins Mendes
+  dog: Parceiro
+  cidade: PO lugar do Mundo
+country: Brazil
+city: PO
+message: classe weather

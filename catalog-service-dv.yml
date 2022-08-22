@@ -1,0 +1,9 @@
+server:
+  port: 8082
+info:
+  author: Octavio Augusto Martins Mendes
+  dog: Parceiro
+  cidade: Presidente Olegario
+country: Brazil
+city: PO
+message: Java Merda

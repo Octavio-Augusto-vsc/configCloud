@@ -2,6 +2,5 @@ server:
   port: 8087
 info:
   author: Octavio Augusto Martins Mendes
-  cidade: Presidente Olegario
 country: Brazil
-message: Java Spring Movie { Balanciamento }.
+message: Java Spring Movie 2

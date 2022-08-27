@@ -1,11 +1,9 @@
 server:
-  port: 8081
+  port: 8080
   
 spring:
    cloud:
     gateway:
-      default-filters:
-        - name: LogFilter
       routes:
         - id: apiweatherroute
           uri: lb://CATALOG-SERVICE

@@ -1,2 +1,17 @@
 server:
   port: 8080
+  
+  spring:  
+  cloud:
+    gateway:
+      default-filters:
+        - name: LogFilter
+      routes:
+        - id: apiweatherroute
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/catalog/**
+        - id: apiusuarioroute
+          uri: lb://MOVIE-SERVICE
+          predicates:
+           - Path=/movie/**

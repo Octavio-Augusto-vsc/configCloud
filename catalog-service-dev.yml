@@ -1,5 +1,7 @@
 server:
   port: 8082
+  servlet:
+    context-path: /catalog/
 info:
   author: Octavio Augusto Martins Mendes
   dog: Parceiro

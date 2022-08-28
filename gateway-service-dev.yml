@@ -4,12 +4,14 @@ server:
 spring:
    cloud:
     gateway:
+      default-filters:
+        - name: LogFilter
       routes:
         - id: apiweatherroute
           uri: lb://CATALOG-SERVICE
           predicates:
-            - Path=/catalog/**
+            - Path=/api-catalog/**
         - id: apiusuarioroute
           uri: lb://MOVIE-SERVICE
           predicates:
-           - Path=/movie/**
+           - Path=/api-movie/**

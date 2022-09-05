@@ -15,3 +15,6 @@ spring:
           uri: lb://MOVIE-SERVICE
           predicates:
            - Path=/api-movie/**
+           
+message: Gateway porta 8080 > -       
+       

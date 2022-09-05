@@ -5,4 +5,4 @@ server:
 info:
   author: Octavio Augusto Martins Mendes
 country: Brazil
-message: Mensagem Movie - Eu sou a Lista de Filmes ( porta 8087 ).
+message: Movie porta 8087

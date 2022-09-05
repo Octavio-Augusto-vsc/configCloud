@@ -5,6 +5,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
       
+      
+info:
+  author: Octavio Augusto Martins Mendes
+  mail: octavio.vscode@gmail.com
+server:
+  port: ${PORT:9999}
+message: Generic
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 management:
   info:
     env:
@@ -19,10 +29,53 @@ management:
   endpoint:
     health:
       show-details: always 
+  
+ 
+#configuração circuit breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      MOVIE-SERVICE:
+        allowHealthIndicatorToFail: false
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failueRateThreshold: 50
+        waitDurationInOpenState: 15000
+        permittedNumberOfCalssInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfIfOpenEnabled: true
+        
+      CATALOG-SERVICE:
+        allowHealthIndicatorToFail: false
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failueRateThreshold: 50
+        waitDurationInOpenState: 15000
+        permittedNumberOfCalssInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfIfOpenEnabled: true
+        
+
+  #Configuração do mecanismo de novas tentativas
+  retry:
+    instances:
+      MOVIE-SERVICE:
+        maxAttempts: 3
+        waitDuration: 1000
+        #retryExceptions[0]: feign.FeignExceptions$InternalServerError
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
           
-info:
-  author: Octavio Augusto Martins Mendes
-  mail: octavio.vscode@gmail.com
-server:
-  port: ${PORT:9999}
-message: Generic
+      CATALOG-SERVICE:
+        maxAttempts: 3
+        waitDuration: 1000
+        #retryExceptions[0]: feign.FeignExceptions$InternalServerError
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
+          

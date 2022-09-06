@@ -11,10 +11,28 @@ spring:
           uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/api-catalog/**
+          
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: catalogService
+                fallbackUri: forward:/fallback/catalog
+            
         - id: apiusuarioroute
           uri: lb://MOVIE-SERVICE
           predicates:
             - Path=/api-movie/**
+           
+# configuraçoes do  Circuit Breaker xxxxxxxxxxxxxxxxxxxx
+
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: movieService
+                fallbackUri: forward:/fallback/movie
+            
+          
+       
 
 message: Gateway porta 8080 > -       
        

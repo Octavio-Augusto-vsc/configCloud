@@ -16,7 +16,7 @@ spring:
           predicates:
             - Path=/api-movie/**
        
-
+#xxxxxxx
 
           filters:
             - name: CircuitBreaker

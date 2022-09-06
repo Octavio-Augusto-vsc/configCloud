@@ -15,15 +15,6 @@ spring:
           uri: lb://MOVIE-SERVICE
           predicates:
             - Path=/api-movie/**
-       
-#xxxxxxx
 
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: catalogoCircuitBreaker
-                fallbackUri: forward:/catalogo-fallback   
-                       
-           
 message: Gateway porta 8080 > -       
        

@@ -27,7 +27,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: movieService
-                fallbackUri: forward:/movie-fallback
+                fallbackUri: forward:/fallback/movie-fallback
             
           
        

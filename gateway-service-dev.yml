@@ -14,7 +14,18 @@ spring:
         - id: apiusuarioroute
           uri: lb://MOVIE-SERVICE
           predicates:
-           - Path=/api-movie/**
+            - Path=/api-movie/**
+       
+#xxxxxxxxxxxxxxxxxxxxxxxxxx       
+# na parte abaixo esta sendo contruido o Circut Breaker para o Gateway tem que ser desta forma
+
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: catalogoCircuitBreaker
+                fallbackUri: forward:/catalogo-fallback   
+                
+#xxxxxxxxxxxxxxxxxxxxxxxxxx                
            
 message: Gateway porta 8080 > -       
        

@@ -1,3 +1,20 @@
+
+# fila acincrona Mensageria  ( comunicação entre microsserviço desativado fica armazenada ete o microserviço voutar e ler a mensagem )
+
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+queue:
+  api-carro:
+    name: CarroQueue
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 eureka:
   instance:
     hostname: localhost

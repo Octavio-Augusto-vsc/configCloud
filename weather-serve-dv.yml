@@ -1,9 +1,0 @@
-server:
-  port: 8082
-info:
-  author: Octavio Augusto Martins Mendes
-  dog: Parceiro
-  cidade: PO
-country: Brazil
-city: PO
-message: sem messagem

@@ -1,0 +1,8 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /api-usuario/
+info:
+  author: Octavio Augusto Martins Mendes
+country: Brazil
+message: Usuario porta 8088

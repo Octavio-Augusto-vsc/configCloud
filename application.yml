@@ -10,7 +10,11 @@ spring:
   
 queue:
   fila-movie:
-    name: MovieQueue  
+    name: MovieQueue
+  fila-catalog-movie:
+    name: CatalogMovieQueue
+  fila-catalog-serie:
+    name: CatalogSerieQueue
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

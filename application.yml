@@ -1,11 +1,13 @@
-
+# SPRING  os com jogo da velha e local os funcionando e Docker
 spring:
   zipkin:
-    base-url: http://localhost:9411/
+    #base-url: http://localhost:9411/
+    base-url: http://zipkin-service:9411/
   rabbitmq:
     username: guest
     password: guest
-    host: localhost
+    #host: localhost
+    host: rabbitmq-service
     port: 5672
   
 queue:

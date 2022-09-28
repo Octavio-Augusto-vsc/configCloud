@@ -66,6 +66,16 @@ resilience4j:
         permittedNumberOfCalssInHalfOpenState: 3
         automaticTransitionFromOpenToHalfIfOpenEnabled: true
         
+      SERIE-SERVICE:
+        allowHealthIndicatorToFail: false
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failueRateThreshold: 50
+        waitDurationInOpenState: 15000
+        permittedNumberOfCalssInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfIfOpenEnabled: true
+        
       CATALOG-SERVICE:
         allowHealthIndicatorToFail: false
         registerHealthIndicator: true
@@ -81,6 +91,16 @@ resilience4j:
   retry:
     instances:
       MOVIE-SERVICE:
+        maxAttempts: 3
+        waitDuration: 1000
+        #retryExceptions[0]: feign.FeignExceptions$InternalServerError
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
+          
+      SERIE-SERVICE:
         maxAttempts: 3
         waitDuration: 1000
         #retryExceptions[0]: feign.FeignExceptions$InternalServerError

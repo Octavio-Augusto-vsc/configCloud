@@ -13,6 +13,8 @@ spring:
 queue:
   api-movie:
     name: MovieQueue
+  api-serie:
+    name: SerieQueue
 
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
